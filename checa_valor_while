@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while [ -z "${VALOR}" ]; do
+	echo -n "Entre com o comando: "
+	read VALOR
+done
+
+cat /etc/passwd | while read linha; do
+	echo $linha
+done > /tmp/teste.txt
+

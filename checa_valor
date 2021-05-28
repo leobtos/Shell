@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo -n "Entre com o comando: "
+read VALOR
+
+case "$VALOR" in
+  start)
+    echo "Foi digitado o comando start";;
+  
+  stop)
+    echo "Foi digitado o comando stop";;
+
+  *)
+    echo "Por favor, digite APENAS start ou stop"
+    exit 1;;
+esac
+echo "Fim do programa"
+exit 0
