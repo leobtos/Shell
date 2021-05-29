@@ -1,0 +1,31 @@
+#!/bin/bash
+#ls -lha --color=auto
+#echo -n "Entre com o nome de usuário para verificação: "
+#read USUARIO
+
+#if [ "$USER" != "$USUARIO" ]; then
+#	echo "Não está executando o script com o usuário $USUARIO"
+#	exit 1
+#fi
+
+if [ ! -d "/tmp/copia" ]; then
+	mkdir /tmp/copia
+fi
+
+for VAR in $(seq 10 20); do
+	#echo " Número: $VAR"
+	if [ -d "/tmp/copia/diretorio$VAR" ]; then
+		echo "Diretório /tmp/copia/diretorio$VAR existe, IGNORE"
+		continue
+	break
+	else
+		echo "O diretório $VAR não existe, então ele será criado automáticamente"
+		mkdir "/tmp/copia/diretorio$VAR"
+	fi
+done
+
+echo "O FOR foi finalizado"
+
+if [ ! -f "/tmp/copia/ls" ]; then
+	cp /bin/ls /tmp/copia/
+fi
